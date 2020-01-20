@@ -3,7 +3,7 @@ description = 'Personel Blog'
 compile_sass = true
 highlight_code = true
 build_search_index = false
-theme = 'ergo'
+theme = 'Ergo'
 
 [extra]
 profile = 'profile.svg'
