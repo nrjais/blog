@@ -18,7 +18,7 @@ build:
   preview_env:
   - DOCKER_TAG=v0.9.0
   preview_output_directory: public
-  preview_docker_image: balthek/zola
+  preview_docker_image: j1mc/docker-zola
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: serve --drafts --port 8080
