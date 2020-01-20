@@ -1,0 +1,3 @@
+[submodule "themes/materialize"]
+	path = themes/materialize
+	url = https://github.com/verpeteren/gutenberg-materialize.git

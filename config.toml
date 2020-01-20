@@ -1,0 +1,16 @@
+base_url = 'https://nrjais.com'
+description = 'Personel Blog'
+compile_sass = true
+highlight_code = true
+build_search_index = false
+theme = 'ergo'
+
+[extra]
+profile = 'profile.svg'
+website = 'nrjais.com'
+github = 'nrjais'
+twitter = 'nrjais'
+email = 'neerajj85@gmail.com'
+instagram = ''
+youtube = ''
+utteranc = 'nrjais/blog'
