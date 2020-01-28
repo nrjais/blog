@@ -10,7 +10,7 @@ jobs:
     - name: Build the site
       run: docker run -w /srv -v ${{ github.workspace }}:/srv j1mc/docker-zola build
     - name: Setup public
-      run: git init
+      run: cd public && git init
     - name: GitHub Push
       uses: ad-m/github-push-action@v0.5.0
       with:
