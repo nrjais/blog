@@ -1,10 +1,9 @@
 +++
-title = "Welcome to Ergo, a svbtle inspired theme"
-date = 2018-08-31
 category = "test"
-draft = true
-+++
+date = 2018-08-31T00:00:00Z
+title = "Welcome to Ergo, a svbtle inspired theme"
 
++++
 This is a small example post of stuff you can do with the `ergo` theme.
 We'll try to represent all possible markdown and shortcode combinations here
 so you can develop easily.
