@@ -6,8 +6,15 @@ fields:
   name: sort_by
   label: sort_by
 - type: text
-  name: paginate_by
-  label: paginate_by
-- type: text
   name: paginate_path
   label: paginate_path
+- name: paginate_by
+  type: number
+  label: paginate_by
+  description: ''
+  default: '5'
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
