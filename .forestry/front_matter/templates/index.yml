@@ -1,0 +1,13 @@
+---
+label: Index
+hide_body: true
+fields:
+- type: text
+  name: sort_by
+  label: sort_by
+- type: text
+  name: paginate_by
+  label: paginate_by
+- type: text
+  name: paginate_path
+  label: paginate_path
