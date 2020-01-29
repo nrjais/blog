@@ -1,7 +1,6 @@
 +++
 category = "test"
 date = 2018-08-31T00:00:00Z
-draft = true
 title = "Welcome to Ergo, a svbtle inspired theme"
 
 +++
