@@ -1,8 +1,10 @@
 base_url = 'https://nrjais.com'
+title = 'Neeraj Jaiswal'
 description = 'Personel Blog'
 compile_sass = true
 highlight_code = true
 build_search_index = false
+generate_rss = true
 theme = 'Ergo'
 
 [extra]
