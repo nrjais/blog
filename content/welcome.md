@@ -1,7 +1,7 @@
 +++
 category = "test"
 date = 2018-08-31T00:00:00Z
-title = "Welcome to Ergo, a svbtle inspired theme"
+title = "Welcome to Ergo"
 
 +++
 This is a small example post of stuff you can do with the `ergo` theme.
