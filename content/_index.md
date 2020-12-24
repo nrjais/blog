@@ -1,6 +1,6 @@
 +++
-paginate_by = 6
-paginate_path = "page"
+paginate_by = 5
 sort_by = "date"
-
+[extra]
+author = "Neeraj Jaiswal"
 +++

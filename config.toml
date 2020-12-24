@@ -1,18 +1,13 @@
 base_url = 'https://nrjais.com'
 title = 'Neeraj Jaiswal'
 description = 'Personel Blog'
-compile_sass = true
 highlight_code = true
-build_search_index = false
+build_search_index = true
 generate_rss = true
-theme = 'Ergo'
+theme = "zola-paper"
+taxonomies = [
+    {name = "tags", rss = true, paginate_by = 5},
+]
 
 [extra]
-profile = 'profile.svg'
-website = 'nrjais.com'
-github = 'nrjais'
-twitter = 'nrjais'
-email = 'contact@nrjais.com'
-instagram = ''
-youtube = ''
-utteranc = 'nrjais/blog'
+links = []

@@ -1,122 +1,22 @@
 +++
-category = "test"
-date = 2018-08-31T00:00:00Z
-title = "Welcome to Ergo"
+title = "Welcome"
+date = 2020-10-22
+category = "Prog"
 
+[extra]
+author = "Neeraj Jaiswal"
+
+[taxonomies]
+tags = ["rust", "ssg", "other"]
 +++
-This is a small example post of stuff you can do with the `ergo` theme.
 
-## Here's some lists
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien. Aenean ligula nunc, laoreet id sem in, interdum bibendum felis. Donec vel dui neque. Praesent ac sem ut justo volutpat rutrum a imperdiet tellus. Nam lobortis massa non hendrerit hendrerit. Vivamus porttitor dignissim turpis, eget aliquam urna tincidunt non. Aliquam et fringilla turpis. Nullam eros est, eleifend in ornare sed, hendrerit eget est. Aliquam tellus felis, suscipit vitae ex vel, fringilla tempus massa. Nulla facilisi. Pellentesque lobortis consequat lectus. Maecenas ac libero elit.
+<!-- more -->
+Ut luctus dolor ut tortor hendrerit, sed hendrerit augue scelerisque. Suspendisse quis sodales dui, at tempus ante. Nulla at tempor metus. Aliquam vitae rutrum diam. Curabitur iaculis massa dui, quis varius nulla finibus a. Praesent eu blandit justo. Suspendisse pharetra, arcu in rhoncus rutrum, magna magna viverra erat, eget vestibulum enim tellus id dui. Nunc vel dui et arcu posuere maximus. Mauris quam quam, bibendum sed libero nec, tempus hendrerit arcu. Suspendisse sed gravida orci. Fusce tempor arcu ac est pretium porttitor. Aenean consequat risus venenatis sem aliquam, at sollicitudin nulla semper. Aenean bibendum cursus hendrerit. Nulla congue urna nec finibus bibendum. Donec porta tincidunt ligula non ultricies.
 
-* let's list some stuff
-* unordered, of course.
 
-1. We can also order lists
-   1. And nesting here works too
-   2. We can do whatever we want!
-2. And drop back to the original indentation.
+Sed vulputate tristique elit, eget pharetra elit sodales sed. Proin dignissim ipsum lorem, at porta eros malesuada sed. Proin tristique eros eu quam ornare, suscipit luctus mauris lobortis. Phasellus ut placerat enim. Donec egestas faucibus maximus. Nam quis efficitur eros. Cras tincidunt, lacus ac pretium porta, dui dolor varius elit, eget laoreet justo justo vitae metus. Morbi eget nisi ut ex scelerisque lobortis ut in lorem. Vestibulum et lorem quis ipsum feugiat varius. Mauris nec nulla viverra nisi porttitor efficitur. Morbi vel purus eleifend, finibus erat non, placerat ipsum. Mauris et augue vel nisi volutpat aliquam. Curabitur malesuada tortor est, at condimentum neque eleifend in.
 
-# Headers
+Morbi id ornare lacus. Suspendisse ultrices rutrum posuere. Nullam porttitor libero quis ligula finibus semper. Mauris iaculis magna et nisl tristique, eget maximus ex feugiat. Nam eu felis leo. Quisque ultrices varius purus in molestie. Duis non accumsan ligula. Vivamus dignissim malesuada metus, vel hendrerit tellus viverra id. Curabitur posuere, mauris vitae dignissim dictum, velit mi condimentum lorem, nec varius velit arcu a mi. In dolor sapien, condimentum sed aliquam at, dignissim id purus. Cras lorem leo, vulputate ac ante sed, molestie tempus lectus. Curabitur efficitur libero quam, rhoncus faucibus libero pharetra nec. Curabitur lobortis ullamcorper nisl eu imperdiet. Duis porttitor interdum magna, ac eleifend orci consequat vitae. Aliquam augue felis, faucibus vel blandit sed, maximus non turpis.
 
-## Smaller
-
-### Smaller still!
-
-#### Can't really get much smaller than this
-
-##### Even if you try
-
-###### It won't do anything
-
-We can also _italicize_ stuff, or make it **bold**.
-
-# Code
-
-Want some Rust code?  We got Rust code.
-
-```rust
-
-// `vst` uses macros, so we'll need to specify that we're using them!
-#[macro_use]
-extern crate vst;
-
-// We're implementing a trait `Plugin` that does all the VST-y stuff for us.
-impl Plugin for Whisper {
-    fn get_info(&self) -> Info {
-        Info {
-            name: "Whisper".to_string()
-        }
-    }
-}
-```
-
-We can also add a filename to our code blocks which is super useful when
-providing tutorials, etc.  Here's some HTML we can insert into our
-markdown file right before the code block.  (Meta, right?)
-
-<div class='filename'>
-<div>www/index.html</div>
-</div>
-
-```html
-<div class='filename'>
-  <div>src/lib.rs</div>
-</div>
-```
-
-If we want, we can also `specify inline code` which is useful for `the small stuff`.
-
-## Horizontal rules
-
-We have them!
-
-***
-
-## BlockQuotes
-
-{% quote(author="Noam Chomsky") %}Language is a process of free creation; its laws and principles are fixed, but the manner in which the principles of generation are used is free and infinitely varied. Even the interpretation and use of words involves a process of free creation.
-{% end %}
-
-## Youtube
-
-with `yt(id="the_id_here")`
-{{ yt(id="ogEjvM-v_-s") }}
-
-## Vimeo
-
-with `vm(id="id_here")`
-{{ vm(id="115189988") }}
-
-## Links
-
-[Of Course](https://ergo.liquidthink.net)
-
-## Tables
-
-You can make tables in markdown, too!  Who would have thought.  Are these styled yet?
-
-| First Header | Second Header |
-| --- | --- |
-| Content Cell | Content Cell |
-| Content Cell | Content Cell |
-
-## Foldable Text
-
-<details>
-<summary>Title 1</summary>
-<p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-</details>
-
-<details>
-<summary>Title 2</summary>
-<p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
-</details>
-
-We can do that like this:
-
-```html
-<details>
-    <summary>Title 1</summary>
-    <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-</details>
-```
+Quisque viverra a eros id auctor. Proin id nibh ut nisl dignissim pellentesque et ac mi. Nullam mattis urna quis consequat bibendum. Donec pretium dui elit, a semper purus tristique et. Mauris euismod nisl eu vehicula facilisis. Maecenas facilisis non massa non scelerisque. Integer malesuada cursus erat eu viverra. Duis ligula mi, eleifend vel justo id, laoreet porttitor ex. Etiam ultricies lacus lorem, sed aliquam nulla blandit in. Maecenas vel facilisis neque, vitae fringilla eros. In justo nibh, pellentesque sed faucibus nec, varius sit amet risus.
