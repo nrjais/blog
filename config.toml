@@ -1,11 +1,12 @@
 base_url = 'https://nrjais.com'
 title = 'Neeraj Jaiswal'
 description = 'Personel Blog'
+theme = "zola-paper"
 highlight_code = true
 build_search_index = true
 generate_rss = true
-theme = "zola-paper"
+generate_feed = true
 taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 
 [extra]
-links = []
+links = [{ name = "Github", url = "https://github.com/nrjais" }, { name = "Linkedin", url = "https://www.linkedin.com/in/nrjais/" }]
