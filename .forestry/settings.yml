@@ -15,10 +15,8 @@ front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
-  preview_env:
-  - DOCKER_TAG=v0.9.0
   preview_output_directory: public
-  preview_docker_image: j1mc/docker-zola
+  preview_docker_image: balthek/zola:0.12.2
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: serve --drafts --port 8080 -i 0.0.0.0
