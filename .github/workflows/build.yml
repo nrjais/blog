@@ -1,4 +1,4 @@
-name: Site CI
+name: Build site
 
 on: [push]
 
@@ -6,12 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Build the site
-      run: docker run -w /srv -v ${{ github.workspace }}:/srv j1mc/docker-zola build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: site
-        PUBLISH_DIR: ./public
+      - uses: actions/checkout@v1
+      - name: Build the site
+        run: docker run -w /srv -v ${{ github.workspace }}:/srv balthek/zola:0.12.2 build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: site
+          PUBLISH_DIR: ./public

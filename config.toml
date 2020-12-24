@@ -5,9 +5,7 @@ highlight_code = true
 build_search_index = true
 generate_rss = true
 theme = "zola-paper"
-taxonomies = [
-    {name = "tags", rss = true, paginate_by = 5},
-]
+taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 
 [extra]
 links = []
