@@ -1,252 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <title>Neeraj Jaiswal - Welcome</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-        <!-- SEO -->
-        
-        <title> Welcome to Ergo, a svbtle inspired theme | Neeraj Jaiswal </title>
-        
-
         <!-- Enable responsiveness on mobile devices-->
-        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+        <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
 
-        <!--  css -->
-        <link rel="stylesheet"  href="/ergo.css" >
+        <!-- Standard meta tags -->
+        <meta name="author" content="Neeraj Jaiswal">
+        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien. Aenean ligula nunc, laoreet id sem in, interdum bibendum felis. Donec vel dui neque. Praesent ac sem ut justo volutpat rutrum a imperdiet tellus. Nam lobortis massa non hendrerit hendrerit. Vivamus porttitor dignissim turpis, eget aliquam urna tincidunt non. Aliquam et fringilla turpis. Nullam eros est, eleifend in ornare sed, hendrerit eget est. Aliquam tellus felis, suscipit vitae ex vel, fringilla tempus massa. Nulla facilisi. Pellentesque lobortis consequat lectus. Maecenas ac libero elit.">
 
-        <!-- fonts -->
-        <!-- preload  -->
-        <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,500i,600,700,800,900|Raleway" as="style">
-        <link rel="preload"  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" as="style" >
-        <!-- load -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,500i,600,700,800,900|Raleway">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!-- Open Graph Tags -->
+        <meta property="og:site_name" content="Neeraj Jaiswal">
+        
+        <meta property="og:title" content="Welcome">
+        <meta property="og:url" content="https:&#x2F;&#x2F;nrjais.com&#x2F;welcome">
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien. Aenean ligula nunc, laoreet id sem in, interdum bibendum felis. Donec vel dui neque. Praesent ac sem ut justo volutpat rutrum a imperdiet tellus. Nam lobortis massa non hendrerit hendrerit. Vivamus porttitor dignissim turpis, eget aliquam urna tincidunt non. Aliquam et fringilla turpis. Nullam eros est, eleifend in ornare sed, hendrerit eget est. Aliquam tellus felis, suscipit vitae ex vel, fringilla tempus massa. Nulla facilisi. Pellentesque lobortis consequat lectus. Maecenas ac libero elit.">
+        
+        <meta property="og:type" content="article">
+        <meta property="article:published_time" content="2020-10-22">
+        
+        
+        <meta property="article:tags" content="rust"><meta property="article:tags" content="ssg"><meta property="article:tags" content="other">
+        
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;nrjais.com&#x2F;main.css">
+
+        <!-- Feeds -->
+        
+
+        <!-- Google Analytics -->
+        
+
+        <script>
+            function setTheme() {
+                const time = new Date();
       
+                const prev = localStorage.getItem('date');
+                const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+      
+                const now = time.getTime();
+                let sunrise;
+                let sunset;
+      
+                function setBodyClass() {
+                    if (now > sunrise && now < sunset) return;
+                    document.body.classList.add('dark');
+                }
+      
+                if (date !== prev) {
+                    fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+                        .then(res => res.json())
+                        .then(data => {
+                            sunrise = data.sunrise.split(':').map(Number);
+                            sunset = data.sunset.split(':').map(Number);
+                    })
+                    .catch(() => {
+                        sunrise = [7, 0];
+                        sunset = [19, 0];
+                    })
+                    .finally(() => {
+                        sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+                        sunset = time.setHours(sunset[0], sunset[1], 0);
+                        setBodyClass();
+                        localStorage.setItem('sunrise', sunrise);
+                        localStorage.setItem('sunset', sunset);
+                    });
+                    localStorage.setItem('date', date);
+                } else {
+                    sunrise = Number(localStorage.getItem('sunrise'));
+                    sunset = Number(localStorage.getItem('sunset'));
+                    setBodyClass();
+                }
+            }
+        </script>
     </head>
-
-    <body>
-      
-        
-<input type="checkbox" id="openSidebarMenu" class="openSidebarMenu">
-<label class="menu cross menu--1" for="openSidebarMenu">
-    <svg viewBox="0 0 75 75" xmlns="https://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="30" />
-        <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
-        <path class="line--2" d="M0 50h70" />
-        <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
-    </svg>
-</label>
-
-<div id="sidebarMenu">
-    <div class="menu_wrapper">
-        <ul class="sidebarMenuInner">
-            <li>
-                <a href="https:&#x2F;&#x2F;nrjais.com" >Neeraj Jaiswal</a>
-                <div class="menu_div" ></div>
-            </li>
-            
-            <li><a href="https://nrjais.com" target="_blank">nrjais.com</a></li>
-            
-            
-            <li><a href="https://github.com/nrjais" target="_blank" >nrjais</a><i class="fab fa-github" ></i></li>
-            
-            
-            <li><a href="https://twitter.com/nrjais" target="_blank">@nrjais</a><i class="fab fa-twitter" ></i></li>
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="mailto:contact@nrjais.com?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
-            
-            
-            <li><a href="https:&#x2F;&#x2F;nrjais.com/rss.xml" target ="_blank">rss</a><i class="fas fa-rss" ></i></li>
-            
-        </ul>
-    </div>
-</div>
-
-      
-
-      
-<nav id="overlord" class="overlord" >
-  
-<figure class="mini_logo ">
-    <a href="https:&#x2F;&#x2F;nrjais.com" style="background-image: url(/img/profile.svg)"></a>
-</figure>
-<h5>
-    <a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a>
-</h5>
-
-</nav>
-
-<section class="post_container">
-  <article>
     
-      <h1 class="article_title"><a href="https:&#x2F;&#x2F;nrjais.com&#x2F;welcome&#x2F;" id="article_link">Welcome to Ergo, a svbtle inspired theme</a></h1>
-      
-<ul class="frontmatter frontmatter_page" id="frontmatter">
-    <li>
-        <time class="article_time"  datetime="2018-08-31T00:00:00Z">August 31, 2018</time>
-    </li>
-    <span class="dotDivider"></span>
-    <li> 383 words </li>
-    <span class="dotDivider" ></span>
-    <li> 2 min </li>
-</ul>
-
-      <p>This is a small example post of stuff you can do with the <code>ergo</code> theme.
-We'll try to represent all possible markdown and shortcode combinations here
-so you can develop easily.</p>
-<h2 id="here-s-some-lists">Here's some lists</h2>
-<ul>
-<li>let's list some stuff</li>
-<li>unordered, of course.</li>
-</ul>
-<ol>
-<li>We can also order lists
-<ol>
-<li>And nesting here works too</li>
-<li>We can do whatever we want!</li>
-</ol>
-</li>
-<li>And drop back to the original indentation.</li>
-</ol>
-<h1 id="headers">Headers</h1>
-<h2 id="smaller">Smaller</h2>
-<h3 id="smaller-still">Smaller still!</h3>
-<h4 id="can-t-really-get-much-smaller-than-this">Can't really get much smaller than this</h4>
-<h5 id="even-if-you-try">Even if you try</h5>
-<h6 id="it-won-t-do-anything">It won't do anything</h6>
-<p>We can also <em>italicize</em> stuff, or make it <strong>bold</strong>.</p>
-<h1 id="code">Code</h1>
-<p>Want some Rust code?  We got Rust code.</p>
-<pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">
-</span><span style="color:#65737e;">// `vst` uses macros, so we&#39;ll need to specify that we&#39;re using them!
-</span><span style="color:#c0c5ce;">#[</span><span style="color:#bf616a;">macro_use</span><span style="color:#c0c5ce;">]
-</span><span style="color:#b48ead;">extern crate</span><span style="color:#c0c5ce;"> vst;
-
-</span><span style="color:#65737e;">// We&#39;re implementing a trait `Plugin` that does all the VST-y stuff for us.
-</span><span style="color:#b48ead;">impl </span><span style="color:#c0c5ce;">Plugin </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">Whisper {
-    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">get_info</span><span style="color:#c0c5ce;">(&amp;</span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">) -&gt; Info {
-        Info {
-            name: &quot;</span><span style="color:#a3be8c;">Whisper</span><span style="color:#c0c5ce;">&quot;.</span><span style="color:#96b5b4;">to_string</span><span style="color:#c0c5ce;">()
-        }
-    }
-}
-
-</span></pre>
-<p>We can also add a filename to our code blocks which is super useful when
-providing tutorials, etc.  Here's some HTML we can insert into our
-markdown file right before the code block.  (Meta, right?)</p>
-<div class='filename'>
-  <div>www/index.html</div>
-</div>
-<pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">filename</span><span style="color:#c0c5ce;">&#39;&gt;
-  &lt;</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;src/lib.rs&lt;/</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;
-&lt;/</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;
-</span></pre>
-<p>If we want, we can also <code>specify inline code</code> which is useful for <code>the small stuff</code>.</p>
-<h2 id="horizontal-rules">Horizontal rules</h2>
-<p>We have them!</p>
-<hr />
-<h2 id="blockquotes">BlockQuotes</h2>
-<blockquote>
-  Language is a process of free creation; its laws and principles are fixed, but the manner in which the principles of generation are used is free and infinitely varied. Even the interpretation and use of words involves a process of free creation.<br />
-  -- Noam Chomsky
-</blockquote>
-<h2 id="youtube">Youtube</h2>
-<p>with <code>yt(id=&quot;the_id_here&quot;)</code></p>
-<div class="youtube ">
-    <iframe src="https://www.youtube.com/embed/ogEjvM-v_-s"
-    webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"
-    >
-  </iframe>
-</div>
-<h2 id="vimeo">Vimeo</h2>
-<p>with <code>vm(id=&quot;id_here&quot;)</code></p>
-<div class="vimeo ">
-    <iframe src="https://player.vimeo.com/video/115189988" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>
-</div>
-<h2 id="links">Links</h2>
-<p><a href="https://ergo.liquidthink.net">Of Course</a></p>
-<h2 id="tables">Tables</h2>
-<p>You can make tables in markdown, too!  Who would have thought.  Are these styled yet?</p>
-<table><thead><tr><th>First Header</th><th>Second Header</th></tr></thead><tbody>
-<tr><td>Content Cell</td><td>Content Cell</td></tr>
-<tr><td>Content Cell</td><td>Content Cell</td></tr>
-</tbody></table>
-<h2 id="foldable-text">Foldable Text</h2>
-<details>
-    <summary>Title 1</summary>
-    <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-</details>
-<details>
-    <summary>Title 2</summary>
-    <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
-</details>
-<p>We can do that like this:</p>
-<pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">details</span><span style="color:#c0c5ce;">&gt;
-    &lt;</span><span style="color:#bf616a;">summary</span><span style="color:#c0c5ce;">&gt;Title 1&lt;/</span><span style="color:#bf616a;">summary</span><span style="color:#c0c5ce;">&gt;
-    &lt;</span><span style="color:#bf616a;">p</span><span style="color:#c0c5ce;">&gt;Content 1 Content 1 Content 1 Content 1 Content 1&lt;/</span><span style="color:#bf616a;">p</span><span style="color:#c0c5ce;">&gt;
-&lt;/</span><span style="color:#bf616a;">details</span><span style="color:#c0c5ce;">&gt;
-</span></pre>
-      
-  </article>
-  
-    <script src="https://utteranc.es/client.js"
-            repo="nrjais&#x2F;blog"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous" async>
+    <body class="single">
+    
+    <!-- Apply theme -->
+    <script>
+      setTheme();
     </script>
-  
-</section>
 
-       
+    
+        <header class="header">
+            <nav class="nav">
+                
+                <p class="logo"><a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a></p>
+                
+                <ul class="menu">
+                    
+                </ul>
+            </nav>
+        </header>
 
-      <footer>
+        <main class="main">
+            
+<article class="post-single">
+    <header class="post-header">
+        <h1 class="post-title">Welcome</h1>
+        <div class="post-meta">
+            <span class="post-author">
+                Author: Neeraj Jaiswal
+            </span>
+            <br/>
+            <span class="post-date">Published: <time>October 22, 2020</time></span>
+            <span>&middot;</span>
+            <span class="post-reading-time">3 min read</span>
+        </div>
+    </header>
+    <div class="post-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien. Aenean ligula nunc, laoreet id sem in, interdum bibendum felis. Donec vel dui neque. Praesent ac sem ut justo volutpat rutrum a imperdiet tellus. Nam lobortis massa non hendrerit hendrerit. Vivamus porttitor dignissim turpis, eget aliquam urna tincidunt non. Aliquam et fringilla turpis. Nullam eros est, eleifend in ornare sed, hendrerit eget est. Aliquam tellus felis, suscipit vitae ex vel, fringilla tempus massa. Nulla facilisi. Pellentesque lobortis consequat lectus. Maecenas ac libero elit.</p>
+<span id="continue-reading"></span>
+<p>Ut luctus dolor ut tortor hendrerit, sed hendrerit augue scelerisque. Suspendisse quis sodales dui, at tempus ante. Nulla at tempor metus. Aliquam vitae rutrum diam. Curabitur iaculis massa dui, quis varius nulla finibus a. Praesent eu blandit justo. Suspendisse pharetra, arcu in rhoncus rutrum, magna magna viverra erat, eget vestibulum enim tellus id dui. Nunc vel dui et arcu posuere maximus. Mauris quam quam, bibendum sed libero nec, tempus hendrerit arcu. Suspendisse sed gravida orci. Fusce tempor arcu ac est pretium porttitor. Aenean consequat risus venenatis sem aliquam, at sollicitudin nulla semper. Aenean bibendum cursus hendrerit. Nulla congue urna nec finibus bibendum. Donec porta tincidunt ligula non ultricies.</p>
+<p>Sed vulputate tristique elit, eget pharetra elit sodales sed. Proin dignissim ipsum lorem, at porta eros malesuada sed. Proin tristique eros eu quam ornare, suscipit luctus mauris lobortis. Phasellus ut placerat enim. Donec egestas faucibus maximus. Nam quis efficitur eros. Cras tincidunt, lacus ac pretium porta, dui dolor varius elit, eget laoreet justo justo vitae metus. Morbi eget nisi ut ex scelerisque lobortis ut in lorem. Vestibulum et lorem quis ipsum feugiat varius. Mauris nec nulla viverra nisi porttitor efficitur. Morbi vel purus eleifend, finibus erat non, placerat ipsum. Mauris et augue vel nisi volutpat aliquam. Curabitur malesuada tortor est, at condimentum neque eleifend in.</p>
+<p>Morbi id ornare lacus. Suspendisse ultrices rutrum posuere. Nullam porttitor libero quis ligula finibus semper. Mauris iaculis magna et nisl tristique, eget maximus ex feugiat. Nam eu felis leo. Quisque ultrices varius purus in molestie. Duis non accumsan ligula. Vivamus dignissim malesuada metus, vel hendrerit tellus viverra id. Curabitur posuere, mauris vitae dignissim dictum, velit mi condimentum lorem, nec varius velit arcu a mi. In dolor sapien, condimentum sed aliquam at, dignissim id purus. Cras lorem leo, vulputate ac ante sed, molestie tempus lectus. Curabitur efficitur libero quam, rhoncus faucibus libero pharetra nec. Curabitur lobortis ullamcorper nisl eu imperdiet. Duis porttitor interdum magna, ac eleifend orci consequat vitae. Aliquam augue felis, faucibus vel blandit sed, maximus non turpis.</p>
+<p>Quisque viverra a eros id auctor. Proin id nibh ut nisl dignissim pellentesque et ac mi. Nullam mattis urna quis consequat bibendum. Donec pretium dui elit, a semper purus tristique et. Mauris euismod nisl eu vehicula facilisis. Maecenas facilisis non massa non scelerisque. Integer malesuada cursus erat eu viverra. Duis ligula mi, eleifend vel justo id, laoreet porttitor ex. Etiam ultricies lacus lorem, sed aliquam nulla blandit in. Maecenas vel facilisis neque, vitae fringilla eros. In justo nibh, pellentesque sed faucibus nec, varius sit amet risus.</p>
+</div>
+    <footer class="post-footer">
         
-          
-<figure class="mini_logo ">
-    <a href="https:&#x2F;&#x2F;nrjais.com" style="background-image: url(/img/profile.svg)"></a>
-</figure>
-<h5>
-    <a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a>
-</h5>
-
-          
-<ul class="social_list foot_list" >
-    
-    <li class="button extra_small font_faint"><a href="https://nrjais.com" target="_blank">nrjais.com</a></li>
-    
-    
-    <li class="button extra_small font_faint"><a href="https://github.com/nrjais" target="_blank" >nrjais</a><i class="fab fa-github" ></i></li>
-    
-    
-    <li class="button extra_small font_faint"><a href="https://twitter.com/nrjais" target="_blank">@nrjais</a><i class="fab fa-twitter" ></i></li>
-    
-    
-    
-    
-    
-    
-    
-    <li class="button extra_small font_faint"><a href="mailto:contact@nrjais.com?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
-    
-    
-    <li class="button extra_small font_faint"><a href="https:&#x2F;&#x2F;nrjais.com/rss.xml" target ="_blank">rss</a><i class="fas fa-rss" ></i></li>
-    
-</ul>
-
+        <ul class="post-tags">
         
-      </footer>
+            <li><a href="https://nrjais.com/tags/rust/">rust</a></li>
+        
+            <li><a href="https://nrjais.com/tags/ssg/">ssg</a></li>
+        
+            <li><a href="https://nrjais.com/tags/other/">other</a></li>
+        
+        </ul>
+        
+    </footer>
+</article>
+
+        </main>
+
+        <footer class="footer">
+            <span>&copy; 2020 <a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a></span>
+            <span>&middot;</span>
+            <span>Powered by <a href="https://www.getzola.org" rel="noopener" target="_blank">Zola</a>️</span>
+            <span>&middot;</span>
+            <span>Theme️ <a href="https://github.com/schoenenberg/zola-paper" rel="noopener" target="_blank">Zola-Paper</a></span>
+        </footer>
+    
     </body>
 </html>

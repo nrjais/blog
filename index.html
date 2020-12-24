@@ -1,191 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <title>Neeraj Jaiswal</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-        <!-- SEO -->
-        
-        <title> Neeraj Jaiswal </title>
-        
-
         <!-- Enable responsiveness on mobile devices-->
-        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+        <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
 
-        <!--  css -->
-        <link rel="stylesheet"  href="/ergo.css" >
+        <!-- Standard meta tags -->
+        
+        
 
-        <!-- fonts -->
-        <!-- preload  -->
-        <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,500i,600,700,800,900|Raleway" as="style">
-        <link rel="preload"  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" as="style" >
-        <!-- load -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,500i,600,700,800,900|Raleway">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!-- Open Graph Tags -->
+        <meta property="og:site_name" content="Neeraj Jaiswal">
+        
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https:&#x2F;&#x2F;nrjais.com">
+        
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;nrjais.com&#x2F;main.css">
+
+        <!-- Feeds -->
+        
+
+        <!-- Google Analytics -->
+        
+
+        <script>
+            function setTheme() {
+                const time = new Date();
       
+                const prev = localStorage.getItem('date');
+                const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+      
+                const now = time.getTime();
+                let sunrise;
+                let sunset;
+      
+                function setBodyClass() {
+                    if (now > sunrise && now < sunset) return;
+                    document.body.classList.add('dark');
+                }
+      
+                if (date !== prev) {
+                    fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+                        .then(res => res.json())
+                        .then(data => {
+                            sunrise = data.sunrise.split(':').map(Number);
+                            sunset = data.sunset.split(':').map(Number);
+                    })
+                    .catch(() => {
+                        sunrise = [7, 0];
+                        sunset = [19, 0];
+                    })
+                    .finally(() => {
+                        sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+                        sunset = time.setHours(sunset[0], sunset[1], 0);
+                        setBodyClass();
+                        localStorage.setItem('sunrise', sunrise);
+                        localStorage.setItem('sunset', sunset);
+                    });
+                    localStorage.setItem('date', date);
+                } else {
+                    sunrise = Number(localStorage.getItem('sunrise'));
+                    sunset = Number(localStorage.getItem('sunset'));
+                    setBodyClass();
+                }
+            }
+        </script>
     </head>
-
-    <body>
-      
-        
-<input type="checkbox" id="openSidebarMenu" class="openSidebarMenu">
-<label class="menu cross menu--1" for="openSidebarMenu">
-    <svg viewBox="0 0 75 75" xmlns="https://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="30" />
-        <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
-        <path class="line--2" d="M0 50h70" />
-        <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
-    </svg>
-</label>
-
-<div id="sidebarMenu">
-    <div class="menu_wrapper">
-        <ul class="sidebarMenuInner">
-            <li>
-                <a href="https:&#x2F;&#x2F;nrjais.com" >Neeraj Jaiswal</a>
-                <div class="menu_div" ></div>
-            </li>
-            
-            <li><a href="https://nrjais.com" target="_blank">nrjais.com</a></li>
-            
-            
-            <li><a href="https://github.com/nrjais" target="_blank" >nrjais</a><i class="fab fa-github" ></i></li>
-            
-            
-            <li><a href="https://twitter.com/nrjais" target="_blank">@nrjais</a><i class="fab fa-twitter" ></i></li>
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="mailto:contact@nrjais.com?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
-            
-            
-            <li><a href="https:&#x2F;&#x2F;nrjais.com/rss.xml" target ="_blank">rss</a><i class="fas fa-rss" ></i></li>
-            
-        </ul>
-    </div>
-</div>
-
-      
-
-      
-<header class="header">
-  
-  <figure class="user_logo">
-      <a href="https:&#x2F;&#x2F;nrjais.com" style="background-image: url(/img/profile.svg"></a>
-  </figure>
-  <h2 class="site_title">Neeraj Jaiswal</h2>
-  <div>Personel Blog</div>
-  
-<ul class="social_list header_list" >
     
-    <li class="button small font_faint"><a href="https://nrjais.com" target="_blank">nrjais.com</a></li>
+    <body class="list">
     
-    
-    <li class="button small font_faint"><a href="https://github.com/nrjais" target="_blank" >nrjais</a><i class="fab fa-github" ></i></li>
-    
-    
-    <li class="button small font_faint"><a href="https://twitter.com/nrjais" target="_blank">@nrjais</a><i class="fab fa-twitter" ></i></li>
-    
-    
-    
-    
-    
-    
-    
-    <li class="button small font_faint"><a href="mailto:contact@nrjais.com?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
-    
-    
-    <li class="button small font_faint"><a href="https:&#x2F;&#x2F;nrjais.com/rss.xml" target ="_blank">rss</a><i class="fas fa-rss" ></i></li>
-    
-</ul>
-
-  
-</header>
-
-<section class="post_list">
-    
-      <article id="Welcome to Ergo, a svbtle inspired theme" class="post_list_item">
-        <h1 class="article_title" >
-          <a href="https:&#x2F;&#x2F;nrjais.com&#x2F;welcome&#x2F;"  id="article_link" >Welcome to Ergo, a svbtle inspired theme</a>
-        </h1>
-          
-            
-<ul class="frontmatter " id="frontmatter">
-    <li>
-        <time class="article_time"  datetime="2018-08-31T00:00:00Z">August 31, 2018</time>
-    </li>
-    <span class="dotDivider"></span>
-    <li> 383 words </li>
-    <span class="dotDivider" ></span>
-    <li> 2 min </li>
-</ul>
-
-          
-          
-            <p class="article_content">This is a small example post of stuff you can do with the ergo theme.
-We'll try to represent all possible markdown and shortcode combinations here
-so you can develop easily.
-Here's some lists
-
-let's list some stuff
-unordered, of course.
-
-
-We can also orde…</p>
-          
-        <a class="button small" href="https:&#x2F;&#x2F;nrjais.com&#x2F;welcome&#x2F;">Continue Reading →</a>
-      </article>
-    
-</section>
-
-      
-  <nav class="pagination">
-    
+    <!-- Apply theme -->
+    <script>
+      setTheme();
+    </script>
 
     
-  </nav>
+        <header class="header">
+            <nav class="nav">
+                
+                <h1 class="logo"><a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a></h1>
+                
+                <ul class="menu">
+                    
+                </ul>
+            </nav>
+        </header>
 
+        <main class="main">
+            
+            <div class="posts">
+                
+                
+                <article class="first-entry">
+                
+                    <header class="entry-header">
+                        <h2>Welcome</h2>
+                    </header>
+                    <section class=entry-content>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu feugiat sapien. Aenean ligula nunc, laoreet id sem in, interdum bibendum felis. Donec vel dui neque. Praesent ac sem ut justo volutpat rutrum a imperdiet tellus. Nam lobortis massa non hendrerit hendrerit. Vivamus porttitor dignissim turpis, eget aliquam urna tincidunt non. Aliquam et fringilla turpis. Nullam eros est, eleifend in ornare sed, hendrerit eget est. Aliquam tellus felis, suscipit vitae ex vel, fringilla tempus massa. Nulla facilisi. Pellentesque lobortis consequat lectus. Maecenas ac libero elit.</p>
 
-      <footer>
-        
-          
-<figure class="mini_logo ">
-    <a href="https:&#x2F;&#x2F;nrjais.com" style="background-image: url(/img/profile.svg)"></a>
-</figure>
-<h5>
-    <a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a>
-</h5>
+                    </section>
+                    <footer class="entry-footer">
+                        <time>October 22, 2020</time>
+                    </footer>
+                    <a class="entry-link" href="https:&#x2F;&#x2F;nrjais.com&#x2F;welcome&#x2F;"></a>
 
-          
-<ul class="social_list foot_list" >
-    
-    <li class="button extra_small font_faint"><a href="https://nrjais.com" target="_blank">nrjais.com</a></li>
-    
-    
-    <li class="button extra_small font_faint"><a href="https://github.com/nrjais" target="_blank" >nrjais</a><i class="fab fa-github" ></i></li>
-    
-    
-    <li class="button extra_small font_faint"><a href="https://twitter.com/nrjais" target="_blank">@nrjais</a><i class="fab fa-twitter" ></i></li>
-    
-    
-    
-    
-    
-    
-    
-    <li class="button extra_small font_faint"><a href="mailto:contact@nrjais.com?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
-    
-    
-    <li class="button extra_small font_faint"><a href="https:&#x2F;&#x2F;nrjais.com/rss.xml" target ="_blank">rss</a><i class="fas fa-rss" ></i></li>
-    
-</ul>
+                </article>
+                <footer class="page-footer">
+                    <nav class="pagination">
+                        <!--Hidden Previous-Button-->
+                        <!--Hidden Next-Button-->
+                    </nav>
+                </footer>
+            </div>
+            
+        </main>
 
-        
-      </footer>
+        <footer class="footer">
+            <span>&copy; 2020 <a href="https:&#x2F;&#x2F;nrjais.com">Neeraj Jaiswal</a></span>
+            <span>&middot;</span>
+            <span>Powered by <a href="https://www.getzola.org" rel="noopener" target="_blank">Zola</a>️</span>
+            <span>&middot;</span>
+            <span>Theme️ <a href="https://github.com/schoenenberg/zola-paper" rel="noopener" target="_blank">Zola-Paper</a></span>
+        </footer>
+    
     </body>
 </html>
