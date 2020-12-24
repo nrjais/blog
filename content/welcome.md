@@ -5,17 +5,15 @@ title = "Welcome to Ergo"
 
 +++
 This is a small example post of stuff you can do with the `ergo` theme.
-We'll try to represent all possible markdown and shortcode combinations here
-so you can develop easily.
 
 ## Here's some lists
 
-- let's list some stuff
-- unordered, of course.
+* let's list some stuff
+* unordered, of course.
 
 1. We can also order lists
-    1. And nesting here works too
-    2. We can do whatever we want!
+   1. And nesting here works too
+   2. We can do whatever we want!
 2. And drop back to the original indentation.
 
 # Headers
@@ -30,7 +28,7 @@ so you can develop easily.
 
 ###### It won't do anything
 
-We can also *italicize* stuff, or make it **bold**.
+We can also _italicize_ stuff, or make it **bold**.
 
 # Code
 
@@ -50,7 +48,6 @@ impl Plugin for Whisper {
         }
     }
 }
-
 ```
 
 We can also add a filename to our code blocks which is super useful when
@@ -58,7 +55,7 @@ providing tutorials, etc.  Here's some HTML we can insert into our
 markdown file right before the code block.  (Meta, right?)
 
 <div class='filename'>
-  <div>www/index.html</div>
+<div>www/index.html</div>
 </div>
 
 ```html
@@ -73,9 +70,10 @@ If we want, we can also `specify inline code` which is useful for `the small stu
 
 We have them!
 
----
+***
 
 ## BlockQuotes
+
 {% quote(author="Noam Chomsky") %}Language is a process of free creation; its laws and principles are fixed, but the manner in which the principles of generation are used is free and infinitely varied. Even the interpretation and use of words involves a process of free creation.
 {% end %}
 
@@ -85,6 +83,7 @@ with `yt(id="the_id_here")`
 {{ yt(id="ogEjvM-v_-s") }}
 
 ## Vimeo
+
 with `vm(id="id_here")`
 {{ vm(id="115189988") }}
 
@@ -93,23 +92,24 @@ with `vm(id="id_here")`
 [Of Course](https://ergo.liquidthink.net)
 
 ## Tables
+
 You can make tables in markdown, too!  Who would have thought.  Are these styled yet?
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+| First Header | Second Header |
+| --- | --- |
+| Content Cell | Content Cell |
+| Content Cell | Content Cell |
 
 ## Foldable Text
 
 <details>
-    <summary>Title 1</summary>
-    <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+<summary>Title 1</summary>
+<p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
 </details>
 
 <details>
-    <summary>Title 2</summary>
-    <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
+<summary>Title 2</summary>
+<p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
 </details>
 
 We can do that like this:
