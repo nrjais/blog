@@ -15,6 +15,9 @@ front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
+  preview_env:
+  - HUGO_ENV=staging
+  - HUGO_VERSION=0.55.6
   preview_output_directory: public
   preview_docker_image: balthek/zola:0.12.2
   mount_path: "/srv"
