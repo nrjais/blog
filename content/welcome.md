@@ -2,7 +2,7 @@
 category = ["Firefox", "Build"]
 date = 2020-10-22T00:00:00Z
 draft = true
-title = "Building firefox localy with instaler"
+title = "Building firefox localy with installer"
 [extra]
 author = "Neeraj Jaiswal"
 [taxonomies]
