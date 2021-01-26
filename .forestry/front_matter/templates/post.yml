@@ -1,0 +1,27 @@
+---
+label: post
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: list
+  name: category
+  label: category
+- type: field_group
+  name: extra
+  label: extra
+  fields:
+  - type: text
+    name: author
+    label: author
+- type: field_group
+  name: taxonomies
+  label: taxonomies
+  fields:
+  - type: list
+    name: tags
+    label: tags
