@@ -3,32 +3,4 @@
     <url>
         <loc>https://nrjais.com/</loc>
     </url>
-    <url>
-        <loc>https://nrjais.com/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/other/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/other/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/rust/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/rust/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/ssg/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/tags/ssg/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://nrjais.com/welcome/</loc>
-        <lastmod>2020-10-22</lastmod>
-    </url>
 </urlset>
